@@ -19,7 +19,7 @@ function findById(id) {
   db('users').where({ id }).first();
 }
 
-function addUser(user) {
-  const [id] = db('users').insert(user);
+async function addUser(user) {
+  const [id] = await db('users').insert(user);
   return findById(id)
 }

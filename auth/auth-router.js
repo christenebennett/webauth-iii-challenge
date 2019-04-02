@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 
-const Users = require('../users/users-router');
+const Users = require('../users/users-model');
 const { jwtSecret } = require('../config/secrets');
 
 router.post('/register', (req, res) => {
@@ -17,5 +17,36 @@ router.post('/register', (req, res) => {
     })
 })
 
+function generateToken(user){
+  const payload = {
+    subject: user.id,
+    username: user.username
+  };
+
+  const options = {
+    expiresIn: '1d'
+  }
+
+  return jwt.sign(payload, jwtSecret, options);
+}
+
+router.post('/login', (req, res) => {
+  let { username, password } = req.body;
+
+  Users.findBy({ username })
+    .first()
+    .then(user => {
+      if (user && bcrypt.compareSync(password, user.password)) {
+        const token = generateToken(user);
+        console.log(token);
+        res.status(200).json({message: `Welcome ${user.username}! Have a token!`, token});
+      } else {
+        res.status(401).json({ message: 'Invalid Credentials' });
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err)
+    })
+})
 
 module.exports = router;
