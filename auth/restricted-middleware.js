@@ -8,9 +8,10 @@ module.exports = (req, res, next) => {
   const token = req.headers.authorization;
 
   if (token){
+    console.log(token)
     jwt.verify(token, jwtSecret, (err, decodedToken) => {
       if (err){
-        res.status(401).json({ err: 'user not verified' })
+        res.status(401).json({ err: ' tampered token user not verified' })
       } else {
         console.log(`token confirmed`, decodedToken)
         req.decodedJwt = decodedToken;
@@ -18,6 +19,6 @@ module.exports = (req, res, next) => {
       }
     })
   } else {
-    res.status(401).json({ err: 'user not verified' })
+    res.status(401).json({ err: 'no token user not verified' })
   }
 }

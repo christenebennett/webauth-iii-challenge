@@ -7,11 +7,11 @@ const restricted = require('../auth/restricted-middleware');
 router.get('/', restricted, (req,res) => {
   Users.find()
   .then(users => {
-    res.json(users);
+    res.status(200).json(users);
   })
-  .catch(err => console.log(err));
+  .catch(err => {
+    res.status(400).json({message: 'You shall not pass!'})
+  });
 })
-
-
 
 module.exports = router;
