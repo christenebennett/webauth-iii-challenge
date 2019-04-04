@@ -10,8 +10,9 @@ router.post('/register', (req, res) => {
   const hash = bcrypt.hashSync(user.password, 10);
   user.password = hash;
   Users.addUser(user)
-    .then(saved => {
-      res.status(201).json(saved);
+  .then(user => {
+    const token = generateToken(user);
+    res.status(201).json({message: `Welcome aboard, ${user.username}! Here's a token, just for you:`, token});
     })
     .catch(err => {
       res.status(500).json({err: "An error occurred while registering."})
