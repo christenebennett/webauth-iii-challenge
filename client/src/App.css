@@ -1,33 +1,101 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
 .App {
   text-align: center;
+  font-family: Roboto, sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+header {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 20px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navitem {
+  padding: 10px;
+}
+
+form {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  margin: 10px 20px 20px;
+  font-size: 1.8rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  font-size: 1.6rem;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border: 1px solid #545454;
+  background: #545454;
+  color: #ffffff;
+}
+
+button:hover {
+  background: #ffffff;
+  color: #545454;
+}
+
+.btn-logout {
+  border: 1px solid #545454;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+}
+
+.user {
+  padding: 30px;
+  background: rgba(84, 84, 84, 0.5);
+  color: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto; 
+}
+
+.username {
+  font-size: 2rem;
+}
+
+hr {
+  width: 75%;
+}
+.department {
+  padding-top: 20px;
+}
+
+.staff {
+  color: green;
+}
+
+.students {
+  color: darkslateblue;
+}
+
+.engineering {
+  color: darkred;
 }

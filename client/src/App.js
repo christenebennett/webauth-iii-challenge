@@ -12,16 +12,15 @@ class App extends Component {
       <div className="App">
         <header>
           <nav>
-            <NavLink to="/signin">Login</NavLink>
+            <NavLink className="navlink navitem" to="/signin">Login</NavLink>
             &nbsp; | &nbsp;
-            <NavLink to="/users">Users</NavLink>
+            <NavLink className="navlink navitem" to="/users">Users</NavLink>
             &nbsp; | &nbsp;
-            <NavLink to="/signup">Sign Up</NavLink>
+            <NavLink className="navlink navitem" to="/signup">Sign Up</NavLink>
             &nbsp; | &nbsp;
-            <button onClick={this.onLogout}>Logout</button>
+            <button className="btn-logout navitem" onClick={this.onLogout}>Logout</button>
           </nav>
           <main>
-
             <Route path="/signup" component={Signup}/>
             <Route path="/signin" component={Login}/>
             <Route path="/users" component={Users}/>

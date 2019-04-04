@@ -26,11 +26,15 @@ class Users extends React.Component {
     return (
       <>
         <h2>Users</h2>
-        <ul>
+        <div className="users-con">
           {this.state.users.map(user => (
-            <li key={user.username}>{user.username}</li>
+            <div className="user" key={user.username}>
+              <div className="username" >{user.username}</div>
+              <hr />
+              <div className={`${user.department} department`} >Dept: {user.department}</div>
+            </div>
           ))}
-        </ul>
+        </div>
       </>
     )
   }
