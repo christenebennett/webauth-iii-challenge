@@ -20,9 +20,12 @@ class Signup extends React.Component {
     console.log(this.state)
     event.preventDefault();
     const endpoint = "http://localhost:9090/api/register"
+    
+
     axios
       .post(endpoint, this.state)
       .then(res => {
+        console.log(res.data)
         localStorage.setItem('jwt', res.data.token)
       })
       .then (

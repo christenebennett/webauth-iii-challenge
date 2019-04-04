@@ -6,9 +6,6 @@ import Signup from './signup/Signup';
 import { NavLink, Route } from 'react-router-dom';
 
 class App extends Component {
-  constructor(props){
-    super(props);
-  };
 
   onLogout(){
     console.log(`logout!`)
