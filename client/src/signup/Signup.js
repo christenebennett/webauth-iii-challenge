@@ -17,19 +17,17 @@ class Signup extends React.Component {
   }
 
   onSubmit = event => {
-    console.log(this.state)
     event.preventDefault();
     const endpoint = "http://localhost:9090/api/register"
     
     axios
       .post(endpoint, this.state)
       .then(res => {
-        console.log(res.data)
         localStorage.setItem('jwt', res.data.token)
         this.props.history.push('/users')
       })
-      .catch(err => {
-        console.error(err)
+      .catch(error => {
+        console.error(error)
       })
   }
 
@@ -69,7 +67,6 @@ class Signup extends React.Component {
       </>
     )
   }
-
 }
 
 export default Signup;

@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import requireAuth from '../auth/requireAuth';
 
-
 class Users extends React.Component {
 
   state = {
@@ -15,13 +14,12 @@ class Users extends React.Component {
     axios
       .get(endpoint, { headers })
       .then(res => {
-        console.log(res.data);
         this.setState({
           users: res.data
         })
       })
-      .catch(err => {
-        console.log(err);
+      .catch(error => {
+        console.error(error);
       })
   }
   render(){
