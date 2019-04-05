@@ -21,12 +21,11 @@ class Login extends React.Component {
     axios
       .post(endpoint, this.state)
       .then(res => {
-        console.log(res.data)
         localStorage.setItem('jwt', res.data.token)
         this.props.history.push('/users')
       })
-      .catch(err => {
-        console.error(err)
+      .catch(error => {
+        console.error(error)
       })
   }
 
@@ -40,14 +39,16 @@ class Login extends React.Component {
             name="username"
             type="text"
             id="username"
+            autoComplete="off"
             value={this.state.username}
             onChange={this.onInputChange}
           />
           <label htmlFor="password">Password</label>
           <input 
             name="password"
-            type="text"
+            type="password"
             id="password"
+            autoComplete="off"
             value={this.state.password}
             onChange={this.onInputChange}
           />

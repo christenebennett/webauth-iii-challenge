@@ -4,11 +4,18 @@ html {
 
 body {
   font-size: 1.6rem;
+  color: #545454;
 }
 
 .App {
   text-align: center;
   font-family: Roboto, sans-serif;
+}
+
+button,
+header {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
 }
 
 header {
@@ -19,6 +26,10 @@ header {
 
 .navitem {
   padding: 10px;
+}
+
+main {
+  padding: 50px 0;
 }
 
 form {
@@ -56,6 +67,7 @@ button:hover {
   width: auto;
   height: auto;
   padding: 10px 20px;
+  margin-top: 20px;
 }
 
 ul {
@@ -74,7 +86,7 @@ li {
   color: #ffffff;
   width: 100%;
   max-width: 500px;
-  margin: 10px auto; 
+  margin: 10px auto;
 }
 
 .username {
@@ -84,6 +96,7 @@ li {
 hr {
   width: 75%;
 }
+
 .department {
   padding-top: 20px;
 }

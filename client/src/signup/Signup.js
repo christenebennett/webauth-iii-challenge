@@ -17,19 +17,17 @@ class Signup extends React.Component {
   }
 
   onSubmit = event => {
-    console.log(this.state)
     event.preventDefault();
     const endpoint = "http://localhost:9090/api/register"
     
     axios
       .post(endpoint, this.state)
       .then(res => {
-        console.log(res.data)
         localStorage.setItem('jwt', res.data.token)
         this.props.history.push('/users')
       })
-      .catch(err => {
-        console.error(err)
+      .catch(error => {
+        console.error(error)
       })
   }
 
@@ -43,14 +41,16 @@ class Signup extends React.Component {
             name="username"
             type="text"
             id="username"
+            autoComplete="off"
             value={this.state.username}
             onChange={this.onInputChange}
           />
           <label htmlFor="password">Password</label>
           <input 
             name="password"
-            type="text"
+            type="password"
             id="password"
+            autoComplete="off"
             value={this.state.password}
             onChange={this.onInputChange}
           />
@@ -67,7 +67,6 @@ class Signup extends React.Component {
       </>
     )
   }
-
 }
 
 export default Signup;
