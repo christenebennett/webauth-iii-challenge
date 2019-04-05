@@ -17,7 +17,7 @@ class App extends Component {
             <NavLink className="navlink navitem" to="/users">Users</NavLink>
             &nbsp; | &nbsp;
             <NavLink className="navlink navitem" to="/signup">Sign Up</NavLink>
-            &nbsp; | &nbsp;
+            <br />
             <button className="btn-logout navitem" onClick={this.onLogout}>Logout</button>
           </nav>
           <main>

@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import requireAuth from '../auth/requireAuth';
+
 
 class Users extends React.Component {
 
@@ -40,4 +42,4 @@ class Users extends React.Component {
   }
 }
 
-export default Users;
+export default requireAuth(Users);

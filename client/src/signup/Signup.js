@@ -43,14 +43,16 @@ class Signup extends React.Component {
             name="username"
             type="text"
             id="username"
+            autoComplete="off"
             value={this.state.username}
             onChange={this.onInputChange}
           />
           <label htmlFor="password">Password</label>
           <input 
             name="password"
-            type="text"
+            type="password"
             id="password"
+            autoComplete="off"
             value={this.state.password}
             onChange={this.onInputChange}
           />
